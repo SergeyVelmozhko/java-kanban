@@ -13,14 +13,9 @@ public class Task {
         status = Status.NEW;
     }
 
-    public Status getStatus() {
-        return status;
+    public void setId(int id) {
+        this.id = id;
     }
-
-    public void setStatus(Status status) {
-        this.status = status;
-    }
-
 
     @Override
     public String toString() {
