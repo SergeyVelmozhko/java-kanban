@@ -3,7 +3,6 @@ public class Task {
     String description;
     int id;
 
-
     public Status status;
 
     public Task(String name, String description) {

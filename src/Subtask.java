@@ -1,8 +1,8 @@
 public class Subtask extends Task {
-
-    public Subtask(String name, String description) {
+    int idEpic;
+    public Subtask(String name, String description, Epic epic) {
         super(name, description);
-
+        this.idEpic = epic.id;
     }
 
     @Override

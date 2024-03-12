@@ -2,12 +2,12 @@ import java.util.HashMap;
 
 public class TaskManager {
     private static int numberOfId = 0;
-    HashMap<Integer, Task> tasks;
-    HashMap<Integer, Epic> epics;
-    HashMap<Integer, Subtask> subtasks;
+    HashMap<Integer, Task> tasks = new HashMap<>();
+    HashMap<Integer, Epic> epics = new HashMap<>();
+    HashMap<Integer, Subtask> subtasks = new HashMap<>();
 
     // Получение списка задач
-    public void arrayAllTask() {
+    public void getAllTask() {
         if (!tasks.isEmpty())
             System.out.println(tasks.toString());
         if (!epics.isEmpty())
@@ -17,7 +17,7 @@ public class TaskManager {
     }
 
     //Удаление всех задач
-    public void deleteTask() {
+    public void removeTask() {
         tasks.clear();
         epics.clear();
         subtasks.clear();
@@ -36,19 +36,17 @@ public class TaskManager {
     }
 
     //Создание
-    public void addTask(Task object) {
-        tasks = new HashMap<>();
-        tasks.put(object.id, object);
+    public void addTask(Task task) {
+        tasks.put(task.id, task);
     }
 
-    public void addEpic(Epic object) {
-        epics = new HashMap<>();
-        epics.put(object.id, object);
+    public void addEpic(Epic epic) {
+        epics.put(epic.id, epic);
     }
 
-    public void addSudtask(Subtask object) {
-        subtasks = new HashMap<>();
-        subtasks.put(object.id, object);
+    public void addSudtask(Subtask subtask, Epic epic) {
+        subtasks.put(epic.id, subtask);
+        epic.idSubtasks.add(subtask.id);
     }
 
     //Обновление
@@ -75,9 +73,9 @@ public class TaskManager {
         }
     }
 
-    public void updateSubtask(Subtask subtask1, Status status) {
-        if (subtasks.containsKey(subtask1.id)) {
-            subtasks.put(subtask1.id, subtask1);
+    public void updateSubtask(Subtask subtask1, Status status, Epic epic) {
+        if (subtasks.containsKey(epic.id)) {
+            subtasks.put(epic.id, subtask1);
             subtask1.status = status;
         } else {
             System.out.println("Не найдена задача");
@@ -98,14 +96,17 @@ public class TaskManager {
 
     //Получение списка всех подзадач определённого эпика
     public void getSudtaskByEpic(Epic epic) {
-        if (subtasks.containsKey(epic.id)) {
-            System.out.println(subtasks);
+        for (Subtask el : subtasks.values()) {
+            for (int i : epic.idSubtasks) {
+                if (subtasks.containsKey(i)) {
+                    el = subtasks.get(i);
+                    System.out.println(el);
+                }
+            }
         }
     }
 
     public static int setNumberOfId() {
         return ++numberOfId;
     }
-
-
 }
