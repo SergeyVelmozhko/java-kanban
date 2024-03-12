@@ -2,59 +2,59 @@ import java.util.HashMap;
 
 public class TaskManager {
     private static int numberOfId = 0;
-    HashMap<Integer, Task> task;
-    HashMap<Integer, Epic> epic;
-    HashMap<Integer, Subtask> subtask;
+    HashMap<Integer, Task> tasks;
+    HashMap<Integer, Epic> epics;
+    HashMap<Integer, Subtask> subtasks;
 
     // Получение списка задач
     public void arrayAllTask() {
-        if (!task.isEmpty())
-            System.out.println(task.toString());
-        if (!epic.isEmpty())
-            System.out.println(epic.toString());
-        if (!subtask.isEmpty())
-            System.out.println(subtask.toString());
+        if (!tasks.isEmpty())
+            System.out.println(tasks.toString());
+        if (!epics.isEmpty())
+            System.out.println(epics.toString());
+        if (!subtasks.isEmpty())
+            System.out.println(subtasks.toString());
     }
 
     //Удаление всех задач
     public void deleteTask() {
-        task.clear();
-        epic.clear();
-        subtask.clear();
+        tasks.clear();
+        epics.clear();
+        subtasks.clear();
     }
 
     //Получение по идентификатору
     public String getObjectById(int id) {
-        if (task.containsKey(id)) {
-            return task.toString();
-        } else if (epic.containsKey(id)) {
-            return epic.toString();
-        } else if (subtask.containsKey(id)) {
-            return subtask.toString();
+        if (tasks.containsKey(id)) {
+            return tasks.toString();
+        } else if (epics.containsKey(id)) {
+            return epics.toString();
+        } else if (subtasks.containsKey(id)) {
+            return subtasks.toString();
         } else
             return "Нет задачи с таким номером";
     }
 
     //Создание
     public void addTask(Task object) {
-        task = new HashMap<>();
-        task.put(object.id, object);
+        tasks = new HashMap<>();
+        tasks.put(object.id, object);
     }
 
     public void addEpic(Epic object) {
-        epic = new HashMap<>();
-        epic.put(object.id, object);
+        epics = new HashMap<>();
+        epics.put(object.id, object);
     }
 
     public void addSudtask(Subtask object) {
-        subtask = new HashMap<>();
-        subtask.put(object.id, object);
+        subtasks = new HashMap<>();
+        subtasks.put(object.id, object);
     }
 
     //Обновление
     public void updateTask(Task task1, Status status) {
-        if (task.containsKey(task1.id)) {
-            task.put(task1.id, task1);
+        if (tasks.containsKey(task1.id)) {
+            tasks.put(task1.id, task1);
             task1.status = status;
         } else {
             System.out.println("Не найдена задача");
@@ -62,11 +62,11 @@ public class TaskManager {
     }
 
     public void updateEpic(Epic epic1) {
-        if (epic.containsKey(epic1.id)) {
-            epic.put(epic1.id, epic1);
-            if (!subtask.containsKey(epic1.id) || (subtask.containsKey(epic1.id) && subtask.containsValue(Status.NEW))) {
+        if (epics.containsKey(epic1.id)) {
+            epics.put(epic1.id, epic1);
+            if (!subtasks.containsKey(epic1.id) || (subtasks.containsKey(epic1.id) && subtasks.containsValue(Status.NEW))) {
                 epic1.status = Status.NEW;
-            } else if (subtask.containsKey(epic1.id) && subtask.containsValue(Status.DONE)) {
+            } else if (subtasks.containsKey(epic1.id) && subtasks.containsValue(Status.DONE)) {
                 epic1.status = Status.DONE;
             } else
                 epic1.status = Status.IN_PROGRESS;
@@ -76,8 +76,8 @@ public class TaskManager {
     }
 
     public void updateSubtask(Subtask subtask1, Status status) {
-        if (subtask.containsKey(subtask1.id)) {
-            subtask.put(subtask1.id, subtask1);
+        if (subtasks.containsKey(subtask1.id)) {
+            subtasks.put(subtask1.id, subtask1);
             subtask1.status = status;
         } else {
             System.out.println("Не найдена задача");
@@ -86,20 +86,20 @@ public class TaskManager {
 
     //Удаление по идентификатору
     public void removeById(int id) {
-        if (task.containsKey(id))
-            task.remove(id);
-        if (epic.containsKey(id))
-            epic.remove(id);
-        if (subtask.containsKey(id))
-            subtask.remove(id);
+        if (tasks.containsKey(id))
+            tasks.remove(id);
+        if (epics.containsKey(id))
+            epics.remove(id);
+        if (subtasks.containsKey(id))
+            subtasks.remove(id);
         else
             System.out.println("Нет задачи с данным ID: " + id);
     }
 
     //Получение списка всех подзадач определённого эпика
     public void getSudtaskByEpic(Epic epic) {
-        if (subtask.containsKey(epic.id)) {
-            System.out.println(subtask);
+        if (subtasks.containsKey(epic.id)) {
+            System.out.println(subtasks);
         }
     }
 
