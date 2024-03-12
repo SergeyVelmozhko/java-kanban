@@ -62,9 +62,10 @@ public class TaskManager {
     public void updateEpic(Epic epic1) {
         if (epics.containsKey(epic1.id)) {
             epics.put(epic1.id, epic1);
-            if (!subtasks.containsKey(epic1.id) || (subtasks.containsKey(epic1.id) && subtasks.containsValue(Status.NEW))) {
+            Subtask subtask = subtasks.get(epic1.id);
+            if (!subtasks.containsKey(epic1.id) || subtask.status == Status.NEW) {
                 epic1.status = Status.NEW;
-            } else if (subtasks.containsKey(epic1.id) && subtasks.containsValue(Status.DONE)) {
+            } else if (subtasks.containsKey(epic1.id) && subtask.status == Status.DONE) {
                 epic1.status = Status.DONE;
             } else
                 epic1.status = Status.IN_PROGRESS;
