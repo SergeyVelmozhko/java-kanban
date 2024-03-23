@@ -1,17 +1,17 @@
 public class Main {
 
     public static void main(String[] args) {
-        TaskManager taskManager = new TaskManager();
-        Task task = new Task("Task", "descTask");
-        Epic epic = new Epic("Epic", "descEpic");
-        Subtask subtask = new Subtask("Subtask", "descSubtask", epic);
-
-
-
-        //Создание
-        taskManager.addTask(task);
-        taskManager.addEpic(epic);
-        taskManager.addSudtask(subtask, epic);
+//        InMemoryTaskManager taskManager = new InMemoryTaskManager();
+//        Task task = new Task("Task", "descTask");
+//        Epic epic = new Epic("Epic", "descEpic");
+//        Subtask subtask = new Subtask("Subtask", "descSubtask", epic);
+//
+//
+//
+//        //Создание
+//        taskManager.addTask(task);
+//        taskManager.addEpic(epic);
+//        taskManager.addSudtask(subtask, epic);
 
 //        // Получение списка задач
 //        taskManager.getAllTask();

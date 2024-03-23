@@ -8,7 +8,7 @@ public class Task {
     public Task(String name, String description) {
         this.name = name;
         this.description = description;
-        this.id = TaskManager.setNumberOfId();
+        this.id = InMemoryTaskManager.setNumberOfId();
         status = Status.NEW;
     }
 

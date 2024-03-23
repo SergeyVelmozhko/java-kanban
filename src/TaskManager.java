@@ -1,113 +1,33 @@
-import java.util.HashMap;
-
-public class TaskManager {
-    private static int numberOfId = 0;
-    HashMap<Integer, Task> tasks = new HashMap<>();
-    HashMap<Integer, Epic> epics = new HashMap<>();
-    HashMap<Integer, Subtask> subtasks = new HashMap<>();
-
+public interface TaskManager {
     // Получение списка задач
-    public void getAllTask() {
-        if (!tasks.isEmpty())
-            System.out.println(tasks.toString());
-        if (!epics.isEmpty())
-            System.out.println(epics.toString());
-        if (!subtasks.isEmpty())
-            System.out.println(subtasks.toString());
-    }
+    void getAllTask();
 
     //Удаление всех задач
-    public void removeTask() {
-        tasks.clear();
-        epics.clear();
-        subtasks.clear();
-    }
+    void removeTask();
 
     //Получение по идентификатору
-    public String getObjectById(int id) {
-        if (tasks.containsKey(id)) {
-            return tasks.toString();
-        } else if (epics.containsKey(id)) {
-            return epics.toString();
-        } else if (subtasks.containsKey(id)) {
-            return subtasks.toString();
-        } else
-            return "Нет задачи с таким номером";
-    }
+    String getObjectById(int id);
 
     //Создание
-    public void addTask(Task task) {
-        tasks.put(task.id, task);
-    }
+    void addTask(Task task);
 
-    public void addEpic(Epic epic) {
-        epics.put(epic.id, epic);
-    }
+    void addEpic(Epic epic);
 
-    public void addSudtask(Subtask subtask, Epic epic) {
-        subtasks.put(epic.id, subtask);
-        epic.idSubtasks.add(subtask.id);
-    }
+    void addSudtask(Subtask subtask, Epic epic);
 
     //Обновление
-    public void updateTask(Task task1, Status status) {
-        if (tasks.containsKey(task1.id)) {
-            tasks.put(task1.id, task1);
-            task1.status = status;
-        } else {
-            System.out.println("Не найдена задача");
-        }
-    }
+    void updateTask(Task task1, Status status);
 
-    public void updateEpic(Epic epic1) {
-        if (epics.containsKey(epic1.id)) {
-            epics.put(epic1.id, epic1);
-            Subtask subtask = subtasks.get(epic1.id);
-            if (!subtasks.containsKey(epic1.id) || subtask.status == Status.NEW) {
-                epic1.status = Status.NEW;
-            } else if (subtasks.containsKey(epic1.id) && subtask.status == Status.DONE) {
-                epic1.status = Status.DONE;
-            } else
-                epic1.status = Status.IN_PROGRESS;
-        } else {
-            System.out.println("Не найдена задача");
-        }
-    }
+    void updateEpic(Epic epic1);
 
-    public void updateSubtask(Subtask subtask1, Status status, Epic epic) {
-        if (subtasks.containsKey(epic.id)) {
-            subtasks.put(epic.id, subtask1);
-            subtask1.status = status;
-        } else {
-            System.out.println("Не найдена задача");
-        }
-    }
+    void updateSubtask(Subtask subtask1, Status status, Epic epic);
 
     //Удаление по идентификатору
-    public void removeById(int id) {
-        if (tasks.containsKey(id))
-            tasks.remove(id);
-        if (epics.containsKey(id))
-            epics.remove(id);
-        if (subtasks.containsKey(id))
-            subtasks.remove(id);
-        else
-            System.out.println("Нет задачи с данным ID: " + id);
-    }
+    void removeById(int id);
 
     //Получение списка всех подзадач определённого эпика
-    public void getSudtaskByEpic(Epic epic) {
-        for (Subtask el : subtasks.values()) {
-            for (int i : epic.idSubtasks) {
-                if (subtasks.containsKey(i)) {
-                    el = subtasks.get(i);
-                    System.out.println(el);
-                }
-            }
-        }
-    }
+    void getSudtaskByEpic(Epic epic);
 
-    public static int setNumberOfId() {
-        return ++numberOfId;
-    }
+    //Хранение запросов
+    void getHistory();
 }
