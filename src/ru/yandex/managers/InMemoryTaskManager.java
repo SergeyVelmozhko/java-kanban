@@ -1,6 +1,6 @@
-package ru.yandex.Managers;
+package ru.yandex.managers;
 
-import ru.yandex.Tasks.*;
+import ru.yandex.tasks.*;
 
 import java.util.HashMap;
 

@@ -1,6 +1,6 @@
-package ru.yandex.Tasks;
+package ru.yandex.tasks;
 
-import ru.yandex.Managers.InMemoryTaskManager;
+import ru.yandex.managers.InMemoryTaskManager;
 
 public class Task {
     String name;

@@ -1,8 +1,8 @@
-package ru.yandex.Managers;
+package ru.yandex.managers;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ru.yandex.Tasks.*;
+import ru.yandex.tasks.*;
 
 
 import static org.junit.jupiter.api.Assertions.*;

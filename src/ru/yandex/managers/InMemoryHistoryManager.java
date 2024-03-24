@@ -1,6 +1,6 @@
-package ru.yandex.Managers;
+package ru.yandex.managers;
 
-import ru.yandex.Tasks.Task;
+import ru.yandex.tasks.Task;
 
 import java.util.ArrayList;
 

@@ -1,6 +1,6 @@
-package ru.yandex.Managers;
+package ru.yandex.managers;
 
-import ru.yandex.Tasks.Task;
+import ru.yandex.tasks.Task;
 
 public interface HistoryManager<T extends Task> {
 

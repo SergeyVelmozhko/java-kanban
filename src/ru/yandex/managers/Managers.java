@@ -1,4 +1,4 @@
-package ru.yandex.Managers;
+package ru.yandex.managers;
 
 public class Managers {
     public InMemoryTaskManager getDefault(){

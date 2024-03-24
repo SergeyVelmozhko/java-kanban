@@ -1,4 +1,4 @@
-package ru.yandex.Tasks;
+package ru.yandex.tasks;
 
 public class Subtask extends Task {
     int idEpic;
