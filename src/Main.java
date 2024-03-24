@@ -1,10 +1,10 @@
 public class Main {
 
     public static void main(String[] args) {
-//        InMemoryTaskManager taskManager = new InMemoryTaskManager();
-//        Task task = new Task("Task", "descTask");
-//        Epic epic = new Epic("Epic", "descEpic");
-//        Subtask subtask = new Subtask("Subtask", "descSubtask", epic);
+//        ru.yandex.Managers.InMemoryTaskManager taskManager = new ru.yandex.Managers.InMemoryTaskManager();
+//        ru.yandex.Tasks.Task task = new ru.yandex.Tasks.Task("ru.yandex.Tasks.Task", "descTask");
+//        ru.yandex.Tasks.Epic epic = new ru.yandex.Tasks.Epic("ru.yandex.Tasks.Epic", "descEpic");
+//        ru.yandex.Tasks.Subtask subtask = new ru.yandex.Tasks.Subtask("ru.yandex.Tasks.Subtask", "descSubtask", epic);
 //
 //
 //
@@ -23,13 +23,13 @@ public class Main {
 //        taskManager.removeTask(); // Скрыто для проверки обновления
 //
 //        //Обновление
-//        Task task1 = new Task("Task1", "descTask1");
-//        Epic epic1 = new Epic("Epic1", "descEpic1");
-//        Subtask subtask1 = new Subtask("subtask1", "descSubtask1", epic);
+//        ru.yandex.Tasks.Task task1 = new ru.yandex.Tasks.Task("Task1", "descTask1");
+//        ru.yandex.Tasks.Epic epic1 = new ru.yandex.Tasks.Epic("Epic1", "descEpic1");
+//        ru.yandex.Tasks.Subtask subtask1 = new ru.yandex.Tasks.Subtask("subtask1", "descSubtask1", epic);
 //
-//        taskManager.updateTask(task1, Status.IN_PROGRESS);
+//        taskManager.updateTask(task1, ru.yandex.Tasks.Status.IN_PROGRESS);
 //        taskManager.updateEpic(epic1);
-//        taskManager.updateSubtask(subtask1, Status.DONE, epic);
+//        taskManager.updateSubtask(subtask1, ru.yandex.Tasks.Status.DONE, epic);
 //        taskManager.getAllTask(); // проверка на обновление
 //
 //        //Удаление по идентификатору

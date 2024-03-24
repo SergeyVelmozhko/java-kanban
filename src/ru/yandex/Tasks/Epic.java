@@ -1,7 +1,9 @@
+package ru.yandex.Tasks;
+
 import java.util.ArrayList;
 
 public class Epic extends Task {
-    ArrayList<Integer> idSubtasks = new ArrayList<>();
+    public ArrayList<Integer> idSubtasks = new ArrayList<>();
 
     public Epic(String name, String description) {
         super(name, description);
@@ -9,7 +11,7 @@ public class Epic extends Task {
 
     @Override
     public String toString() {
-        return "Epic{" +
+        return "ru.yandex.Tasks.Epic{" +
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", id=" + id +

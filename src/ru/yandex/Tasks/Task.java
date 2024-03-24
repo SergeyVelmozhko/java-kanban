@@ -1,7 +1,11 @@
+package ru.yandex.Tasks;
+
+import ru.yandex.Managers.InMemoryTaskManager;
+
 public class Task {
     String name;
     String description;
-    int id;
+    public int id;
 
     public Status status;
 
@@ -18,7 +22,7 @@ public class Task {
 
     @Override
     public String toString() {
-        return "Task{" +
+        return "ru.yandex.Tasks.Task{" +
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", id=" + id +

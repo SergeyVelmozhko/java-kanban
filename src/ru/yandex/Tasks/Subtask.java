@@ -1,3 +1,5 @@
+package ru.yandex.Tasks;
+
 public class Subtask extends Task {
     int idEpic;
     public Subtask(String name, String description, Epic epic) {
@@ -7,7 +9,7 @@ public class Subtask extends Task {
 
     @Override
     public String toString() {
-        return "Subtask{" +
+        return "ru.yandex.Tasks.Subtask{" +
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", id=" + id +

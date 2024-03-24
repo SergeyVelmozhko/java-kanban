@@ -1,12 +1,15 @@
-import java.util.ArrayList;
+package ru.yandex.Managers;
+
+import ru.yandex.Tasks.*;
+
 import java.util.HashMap;
 
 public class InMemoryTaskManager<T extends Task> implements TaskManager, HistoryManager {
     private static int numberOfId = 0;
-    HashMap<Integer, Task> tasks = new HashMap<>();
-    HashMap<Integer, Epic> epics = new HashMap<>();
-    HashMap<Integer, Subtask> subtasks = new HashMap<>();
-    InMemoryHistoryManager inMemoryHistoryManager = new InMemoryHistoryManager();
+    public HashMap<Integer, Task> tasks = new HashMap<>();
+    public HashMap<Integer, Epic> epics = new HashMap<>();
+    public HashMap<Integer, Subtask> subtasks = new HashMap<>();
+    public InMemoryHistoryManager inMemoryHistoryManager = new InMemoryHistoryManager();
 
     // Получение списка задач
     @Override

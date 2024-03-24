@@ -1,7 +1,9 @@
+package ru.yandex.Managers;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import ru.yandex.Tasks.*;
 
-import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 

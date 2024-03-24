@@ -1,3 +1,7 @@
+package ru.yandex.Managers;
+
+import ru.yandex.Tasks.*;
+
 public interface TaskManager {
     // Получение списка задач
     void getAllTask();

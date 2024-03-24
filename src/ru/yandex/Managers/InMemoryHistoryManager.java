@@ -1,3 +1,7 @@
+package ru.yandex.Managers;
+
+import ru.yandex.Tasks.Task;
+
 import java.util.ArrayList;
 
 public class InMemoryHistoryManager<T extends Task> implements HistoryManager{
